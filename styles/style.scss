@@ -60,24 +60,29 @@ body
 
 .preview_img
 {
-    display: inline-block;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    //display: inline-block;
+    //flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
     background-color: $cyan;
     border-radius: 8px;
+    text-align: center;
 }
 
 .preview_img .view
 {
-    display: inline-block;
-    position: relative;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    //bottom: 50%;
-    transform: translateX(-50%);
-    //transform: translateY(-50%);
-    visibility: visible;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    margin: 1px;
     z-index: 1;
+    opacity: 0;
+    transition: 500ms;
 }
 
 .preview_img img
@@ -88,13 +93,23 @@ body
     max-width: 100%;
     height: auto;
     opacity: 1;
-    transition: opacity 500ms;
+    transition: 500ms;
+    
 }
 
-.preview_img .view ~ img:hover
+.preview_img img:hover
 {
     opacity: 0.5;
-    display: block;
+    transition: 500ms;
+}
+
+
+.preview_img:hover .view,
+.preview_img .view:hover
+{
+    visibility: visible;
+    opacity: 1;
+    transition: 500ms;    
 }
 
 .nft_title
