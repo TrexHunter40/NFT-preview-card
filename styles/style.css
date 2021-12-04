@@ -36,18 +36,52 @@ body {
 }
 
 .preview_img {
+  display: inline-block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #00fff7;
+  border-radius: 8px;
+}
+
+.preview_img .view {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  visibility: visible;
+  z-index: 1;
+}
+
+.preview_img img {
   display: block;
   margin: auto;
   border-radius: 8px;
   max-width: 100%;
   height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+.preview_img .view ~ img:hover {
+  opacity: 0.5;
+  display: block;
 }
 
 .nft_title {
   color: white;
   font-weight: 600;
-  -webkit-transition: color 400ms;
-  transition: color 400ms;
+  -webkit-transition: color 500ms;
+  transition: color 500ms;
   word-break: break-all;
 }
 
@@ -90,6 +124,12 @@ p {
   font-weight: 400;
 }
 
+/*hr
+{
+    background-color: $line;
+    border-top: 1px solid $line;
+    border-radius: 1px;
+}*/
 .creator_credits {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,8 +166,8 @@ p {
 .creator_name {
   color: white;
   font-weight: 400;
-  -webkit-transition: color 400ms;
-  transition: color 400ms;
+  -webkit-transition: color 500ms;
+  transition: color 500ms;
 }
 
 .creator_name:hover {
