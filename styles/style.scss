@@ -1,3 +1,9 @@
+//@import "compass/helpers";
+
+@use "sass:string";
+@use "sass:math";
+@use "sass:meta";
+
 $main_BG: hsl(217, 54%, 11%);
 $card_BG: hsl(216, 50%, 16%);
 $line: hsl(215, 32%, 27%);
@@ -5,7 +11,10 @@ $white: hsl(0, 0%, 100%);
 $soft_blue :hsl(215, 51%, 70%);
 $cyan: hsl(178, 100%, 50%);
 
-@function css-function( $function, $values... ) {
+$image: "../nft-preview-card-component-main/images/image-equilibrium.jpg";
+
+@function css-function( $function, $values... ) 
+{
 	@return 
 		$function
 		+ unquote( '(' )
@@ -14,17 +23,38 @@ $cyan: hsl(178, 100%, 50%);
 	;
 }
 
-@function css-min( $values... ) {
+@function css-min( $values... ) 
+{
 	@return css-function( min, $values );
 }
 
-@function css-max( $values... ) {
+@function css-max( $values... ) 
+{
 	@return css-function( max, $values );
 }
 
-@function css-clamp( $values... ) {
+@function css-clamp( $values... ) 
+{
 	@return css-function( clamp, $values );
 }
+
+@function percent($number)
+{
+    $res: calc($number * 1%);
+    @return $res;
+}
+
+@mixin div-same-size-as-background-img($url) 
+{     
+    background-image: url($url);     
+    background-size: contain;     
+    background-repeat: no-repeat;     
+    width: 100%;     
+    height: 0;
+    $percent: calc(image-height($url) / image-width($url));
+    padding-top: percent($percent); 
+}
+
 
 .attribution 
 { 
@@ -60,34 +90,33 @@ body
 
 .preview_img
 {
-    display: inline-block;
+    /*display: block;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: $cyan;
+    justify-content: center;*/
+    //@include div-same-size-as-background-img($image);
+    //background-image: url($image);
+    background-image: url($image);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
     border-radius: 8px;
 }
 
 .preview_img .view
 {
-    display: inline-block;
-    position: relative;
-    left: 50%;
     //bottom: 50%;
-    transform: translateX(-50%);
     //transform: translateY(-50%);
     visibility: visible;
-    z-index: 1;
+    opacity: 0;
+    //z-index: 1;
 }
 
-.preview_img img
+.preview_img:hover .view
 {
-    display: block;
-    margin: auto;
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-    opacity: 1;
+    opacity: 0.5;
     transition: opacity 500ms;
 }
 
