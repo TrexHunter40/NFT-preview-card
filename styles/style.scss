@@ -5,6 +5,27 @@ $white: hsl(0, 0%, 100%);
 $soft_blue :hsl(215, 51%, 70%);
 $cyan: hsl(178, 100%, 50%);
 
+@function css-function( $function, $values... ) {
+	@return 
+		$function
+		+ unquote( '(' )
+		+ $values
+		+ unquote( ')' )
+	;
+}
+
+@function css-min( $values... ) {
+	@return css-function( min, $values );
+}
+
+@function css-max( $values... ) {
+	@return css-function( max, $values );
+}
+
+@function css-clamp( $values... ) {
+	@return css-function( clamp, $values );
+}
+
 .attribution 
 { 
     font-size: 11px; text-align: center; 
@@ -17,6 +38,10 @@ $cyan: hsl(178, 100%, 50%);
 
 body
 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     background-color: $main_BG;
     font-family: 'Outfit';
     font-weight: 300, 400, 600;
@@ -25,12 +50,14 @@ body
 
 .preview_card
 {
+    
     border-radius: 12px;
     margin: 15%;
-    padding: 5%;;
+    padding: css-min(5%, 30px);
     background-color: $card_BG;
     max-width: 350px;
 }
+
 
 .preview_img
 {
@@ -46,7 +73,15 @@ body
 {
     color: $white;
     font-weight: 600;
+    transition: color 400ms;
+    word-break: break-all;
 }
+
+.nft_title:hover
+{
+    color: $cyan;
+}
+
 
 p
 {
@@ -56,7 +91,8 @@ p
 .nft_description
 {
     color: $soft_blue;
-    font-weight: 400;
+    font-weight: 300;
+    word-break: keep-all;
 }
 
 .nft_info
@@ -76,29 +112,53 @@ p
 
 .time_left
 {
-    font-weight: 300;
+    font-weight: 400;
     
     //align-self: flex-end;
 }
 
-hr.rounded
+hr
 {
-    background-color: $line;
-    border-top: 1px solid $line;
+    //background-color: $line;
+    //border-top: 1px solid $line;
     //border-radius: 1px;
+}
+
+.creator_credits
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: stretch;
+    row-gap: 15px;
+    font-weight: 300;
 }
 
 .creator_pp
 {
-    border: 2px;
-    border-color: $white;
-    margin-top: auto;
-    margin-bottom: auto;
-    size: fill;
+    
+    margin :auto;
+    max-width: 100%;
+    border: 3px solid $white;
+    border-radius: 50%;
+    
+}
+
+.creator_pp img
+{    
+    object-fit: scale-down;
 }
 
 .creator_name
 {
     color: $white;
+    font-weight: 400;
+    transition: color 400ms;
+}
+
+.creator_name:hover
+{
+    color: $cyan;
 }
 

@@ -8,6 +8,19 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #0d192b;
   font-family: 'Outfit';
   font-weight: 300, 400, 600;
@@ -17,7 +30,7 @@ body {
 .preview_card {
   border-radius: 12px;
   margin: 15%;
-  padding: 5%;
+  padding: min(5%, 30px);
   background-color: #14253d;
   max-width: 350px;
 }
@@ -33,6 +46,13 @@ body {
 .nft_title {
   color: white;
   font-weight: 600;
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
+  word-break: break-all;
+}
+
+.nft_title:hover {
+  color: #00fff7;
 }
 
 p {
@@ -41,7 +61,8 @@ p {
 
 .nft_description {
   color: #8bacda;
-  font-weight: 400;
+  font-weight: 300;
+  word-break: keep-all;
 }
 
 .nft_info {
@@ -66,23 +87,50 @@ p {
 }
 
 .time_left {
+  font-weight: 400;
+}
+
+.creator_credits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  row-gap: 15px;
   font-weight: 300;
 }
 
-hr.rounded {
-  background-color: #2f415b;
-  border-top: 1px solid #2f415b;
+.creator_pp {
+  margin: auto;
+  max-width: 100%;
+  border: 3px solid white;
+  border-radius: 50%;
 }
 
-.creator_pp {
-  border: 2px;
-  border-color: white;
-  margin-top: auto;
-  margin-bottom: auto;
-  size: fill;
+.creator_pp img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 
 .creator_name {
   color: white;
+  font-weight: 400;
+  -webkit-transition: color 400ms;
+  transition: color 400ms;
+}
+
+.creator_name:hover {
+  color: #00fff7;
 }
 /*# sourceMappingURL=style.css.map */
