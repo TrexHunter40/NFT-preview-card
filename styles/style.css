@@ -6,4 +6,83 @@
 .attribution a {
   color: #3e52a3;
 }
+
+body {
+  background-color: #0d192b;
+  font-family: 'Outfit';
+  font-weight: 300, 400, 600;
+  color: #8bacda;
+}
+
+.preview_card {
+  border-radius: 12px;
+  margin: 15%;
+  padding: 5%;
+  background-color: #14253d;
+  max-width: 350px;
+}
+
+.preview_img {
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.nft_title {
+  color: white;
+  font-weight: 600;
+}
+
+p {
+  font-size: 18px;
+}
+
+.nft_description {
+  color: #8bacda;
+  font-weight: 400;
+}
+
+.nft_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.price {
+  color: #00fff7;
+  font-weight: 600;
+}
+
+.time_left {
+  font-weight: 300;
+}
+
+hr.rounded {
+  background-color: #2f415b;
+  border-top: 1px solid #2f415b;
+}
+
+.creator_pp {
+  border: 2px;
+  border-color: white;
+  margin-top: auto;
+  margin-bottom: auto;
+  size: fill;
+}
+
+.creator_name {
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */

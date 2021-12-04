@@ -1,3 +1,10 @@
+$main_BG: hsl(217, 54%, 11%);
+$card_BG: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+$soft_blue :hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
 .attribution 
 { 
     font-size: 11px; text-align: center; 
@@ -7,3 +14,91 @@
 {
     color: hsl(228, 45%, 44%); 
 }
+
+body
+{
+    background-color: $main_BG;
+    font-family: 'Outfit';
+    font-weight: 300, 400, 600;
+    color: $soft_blue;
+}
+
+.preview_card
+{
+    border-radius: 12px;
+    margin: 15%;
+    padding: 5%;;
+    background-color: $card_BG;
+    max-width: 350px;
+}
+
+.preview_img
+{
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    
+}
+
+.nft_title
+{
+    color: $white;
+    font-weight: 600;
+}
+
+p
+{
+    font-size: 18px;
+}
+
+.nft_description
+{
+    color: $soft_blue;
+    font-weight: 400;
+}
+
+.nft_info
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.price
+{
+    color: $cyan;
+    font-weight: 600;
+    //align-self: flex-start;
+}
+
+.time_left
+{
+    font-weight: 300;
+    
+    //align-self: flex-end;
+}
+
+hr.rounded
+{
+    background-color: $line;
+    border-top: 1px solid $line;
+    //border-radius: 1px;
+}
+
+.creator_pp
+{
+    border: 2px;
+    border-color: $white;
+    margin-top: auto;
+    margin-bottom: auto;
+    size: fill;
+}
+
+.creator_name
+{
+    color: $white;
+}
+
