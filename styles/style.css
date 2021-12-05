@@ -37,14 +37,8 @@ body {
 
 .preview_img {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
   background-color: #00fff7;
-  border-radius: 8px;
+  border-radius: 10px;
   text-align: center;
 }
 
@@ -79,8 +73,8 @@ body {
   transition: 500ms;
 }
 
-.preview_img:hover .view,
-.preview_img .view:hover {
+.preview_img:hover .view {
+  size: 48px;
   visibility: visible;
   opacity: 1;
   -webkit-transition: 500ms;
